@@ -15,21 +15,21 @@ public class TaskController {
     public List<TaskDto> getTasks(){ return new ArrayList<>();
     }
 
-    @RequestMapping(value = "/managed-tasks/{taskId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/taskId", method = RequestMethod.GET)
     public TaskDto getTask(String taskId){
         return new TaskDto((long)1, "test title", "test_content");
     }
 
-    @RequestMapping(value = "/managed-tasks/{taskId}/deleted-task", method = RequestMethod.DELETE)
+    @RequestMapping(value = "deleted-task", method = RequestMethod.DELETE)
     public void deleteTask(String taskId){
     }
 
-    @RequestMapping(value = "/managed-tasks/{taskId}/updated-task", method = RequestMethod.PUT)
+    @RequestMapping(value = "updated-task", method = RequestMethod.PUT)
     public TaskDto updateTask(TaskDto taskDto){
         return new TaskDto((long)1, "Edited test title", "Test content");
     }
 
-    @RequestMapping(value = "/managed-tasks/{taskId}/created-task", method = RequestMethod.POST)
+    @RequestMapping(value = "created-task", method = RequestMethod.POST)
     public void createTask(TaskDto taskDto){
     }
 }
