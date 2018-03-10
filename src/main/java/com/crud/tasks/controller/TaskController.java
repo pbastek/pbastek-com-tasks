@@ -7,23 +7,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/task")
+@RequestMapping("/v1/tasks")
 public class TaskController {
 
-    @GetMapping("/tasks")
+    @GetMapping
     public List<TaskDto> getTasks(){ return new ArrayList<>();
     }
 
-    @GetMapping("/tasks/{Id}")
+    @GetMapping("/{Id}")
     public TaskDto getTask(String taskId){
         return new TaskDto((long)1, "test title", "test_content");
     }
 
-    @DeleteMapping("/tasks")
+    @DeleteMapping("/{Id}")
     public void deleteTask(String taskId){
     }
 
-    @PutMapping
+    @PutMapping("/{Id}")
     public TaskDto updateTask(TaskDto taskDto){
         return new TaskDto((long)1, "Edited test title", "Test content");
     }
